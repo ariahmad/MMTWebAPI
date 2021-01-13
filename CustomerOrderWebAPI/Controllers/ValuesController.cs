@@ -25,12 +25,6 @@ namespace CustomerOrderWebAPI.Controllers
         // GET api/values/5
         public string Get(string id)
         {
-
-           
-            string jsonString = "";
-            Customers customers = Newtonsoft.Json.JsonConvert.DeserializeObject<Customers>(jsonString);
-
-
             return "value";
         }
 
