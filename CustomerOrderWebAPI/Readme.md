@@ -1,4 +1,7 @@
 ﻿
+Information:
+I have removed the connection string from the Web.config file.
+
 Change considerations
 1. Authorization: creating a class that inherit from AuthorizationFilterAtribute and overwrite onAuthorization method.
 2. Logs: using log4Net for loggin all errors, warnning and informations
