@@ -34,7 +34,7 @@ namespace CustomerOrderWebAPI.Controllers
             return "value";
         }
 
-        //  api/values/C34454/bob @mmtdigital.co.uk,  
+        //  api/values/C34454/bob,  
         // use [FromBody] CustomerIdEmail value as parameter
         [NotImplExceptionFilter]
         public List<CustomerOrders> Get(string customerId, string email)
