@@ -33,8 +33,11 @@ namespace CustomerOrderWebAPI.Controllers
         [NotImplExceptionFilter]
         public List<CustomerOrders> Get(string customerId, string email)
         {
-            //string email = value.Email ;
-            //string id = value.CustomerId= "C34454";
+            //TODO: for json object
+            // string customerInfo = @"{user: ""bob@mmtdigital.co.uk"",customerId: ""R223232""}";
+            //var customer = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(customerInfo);
+            //string user = customer.user;
+            //string id = customer.customerId;
 
             email = "cat.owner@mmtdigital.co.uk";
 

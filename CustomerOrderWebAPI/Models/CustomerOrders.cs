@@ -41,19 +41,32 @@ namespace CustomerOrderWebAPI.Models
                                  " order by ORDERDATE desc";
                 SqlCommand oCmd = new SqlCommand(oString, myConnection);
                 oCmd.Parameters.AddWithValue("@customerId", customerId);
-                myConnection.Open();
-                using (SqlDataReader dataReader = oCmd.ExecuteReader())
+                try
                 {
-                   
-                    while (dataReader.Read())
+                    myConnection.Open();
+                    using (SqlDataReader dataReader = oCmd.ExecuteReader())
                     {
-                        CustomerOrders customerOrders = new CustomerOrders();
-                        customerOrders.PopulateFromReader(dataReader);
-                        orders.Add(customerOrders);
-                    }
 
+                        while (dataReader.Read())
+                        {
+                            CustomerOrders customerOrders = new CustomerOrders();
+                            customerOrders.PopulateFromReader(dataReader);
+                            orders.Add(customerOrders);
+                        }
+
+                       
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //log.Error(ex.Message);
+                    throw;
+                }
+                finally
+                {
                     myConnection.Close();
                 }
+              
             }
             return orders;
 
